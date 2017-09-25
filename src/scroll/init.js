@@ -115,6 +115,7 @@ export function initMixin(BScroll) {
   }
 
   BScroll.prototype._handleOptions = function (options) {
+    // 这个可以用Object.assign了
     this.options = extend({}, DEFAULT_OPTIONS, options)
 
     this.translateZ = this.options.HWCompositing && hasPerspective ? ' translateZ(0)' : ''

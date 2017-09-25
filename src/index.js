@@ -24,6 +24,7 @@ function BScroll(el, options) {
   this._init(el, options)
 }
 
+// 这种mixin的写法挺棒的 把功能分块 分别处理类
 initMixin(BScroll)
 coreMixin(BScroll)
 eventMixin(BScroll)

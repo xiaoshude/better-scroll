@@ -9,6 +9,7 @@ let vendor = (() => {
     standard: 'transform'
   }
 
+  // 这个直接根据client动态返回很棒
   for (let key in transformNames) {
     if (elementStyle[transformNames[key]] !== undefined) {
       return key
@@ -29,7 +30,7 @@ function prefixStyle(style) {
 
   return vendor + style.charAt(0).toUpperCase() + style.substr(1)
 }
-
+// 明确告诉浏览器添加的事件会阻止默认行为
 export function addEvent(el, type, fn, capture) {
   el.addEventListener(type, fn, {passive: false, capture: !!capture})
 }

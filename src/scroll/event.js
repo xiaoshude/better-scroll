@@ -1,3 +1,9 @@
+/**
+ * 这可以做一个通用的事件mixin
+ * 被这个处理后的对象都具有事件机制
+ *
+ */
+
 export function eventMixin(BScroll) {
   BScroll.prototype.on = function (type, fn, context = this) {
     if (!this._events[type]) {
@@ -31,6 +37,7 @@ export function eventMixin(BScroll) {
     let count = _events.length
     while (count--) {
       if (_events[count][0] === fn) {
+        // 这里完全可以slice掉啊 置为undefined 虽然不会执行了 但回导致数组里有很多无用数据啊
         _events[count][0] = undefined
       }
     }
